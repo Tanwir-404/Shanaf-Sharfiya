@@ -13,7 +13,13 @@
   function initLoadingScreen() {
     const loader = $('#loadingScreen');
     const openBtn = $('#openInvitationBtn');
+    const loadingText = $('#loadingText');
     if (!loader || !openBtn) return;
+
+    setTimeout(() => {
+      if (loadingText) loadingText.style.display = 'none';
+      if (openBtn) openBtn.style.display = 'inline-block';
+    }, 2500);
 
     openBtn.addEventListener('click', () => {
       // Audio
